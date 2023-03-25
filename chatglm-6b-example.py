@@ -3,14 +3,17 @@
 
 from transformers import AutoTokenizer, AutoModel
 
+#__model_name__ = 'THUDM/chatglm-6b'
+__model_name__ = 'THUDM/chatglm-6b-int4-qe'
+
 tokenizer = AutoTokenizer.from_pretrained(
-	"THUDM/chatglm-6b",
+	__model_name__,
 	trust_remote_code=True,
 	cache_dir='./.cache',
 	resume_download=True
 )
 model = AutoModel.from_pretrained(
-	"THUDM/chatglm-6b",
+	__model_name__,
 	trust_remote_code=True,
 	cache_dir='./.cache',
 	resume_download=True,
